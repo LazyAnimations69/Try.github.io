@@ -1,170 +1,203 @@
 <!DOCTYPE HTML>
-<!--
-	Solid State by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
-	<head>
-		<title>Gallery of Artworks</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<head>
+	<title>Gallery of Artworks</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<style>
+		.artwork-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			gap: 1.5rem;
+		}
+		.artwork-grid figure {
+			position: relative;
+			margin: 0;
+			cursor: pointer;
+			overflow: hidden;
+			border-radius: 10px;
+		}
+		.artwork-grid img {
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+		}
+		.artwork-grid figure:hover img {
+			transform: scale(1.05);
+			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+		}
+		.artwork-grid figcaption {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			background: rgba(0, 0, 0, 0.6);
+			color: #fff;
+			padding: 0.5rem;
+			text-align: center;
+			font-size: 0.9rem;
+			opacity: 0;
+			transition: opacity 0.3s ease;
+		}
+		.artwork-grid figure:hover figcaption {
+			opacity: 1;
+		}
+		#lightbox {
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
+			background: rgba(0,0,0,0.85);
+			align-items: center;
+			justify-content: center;
+			z-index: 1000;
+		}
+		#lightbox img {
+			max-width: 90%;
+			max-height: 90%;
+			border-radius: 8px;
+		}
+		#lightbox span {
+			position: absolute;
+			top: 20px;
+			right: 30px;
+			color: white;
+			font-size: 2.5rem;
+			cursor: pointer;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body class="is-preload">
+	<div id="page-wrapper">
+		<header id="header">
+			<h2><a href="Index.html"><p class="icon solid fa-home"></p></a></h2>
+			<nav><a href="#menu">Menu</a></nav>
+		</header>
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
-
-				<!-- Header -->
-					<header id="header">
-						<h2><a href="Index.html"> <p class="icon solid fa-home"></p></a></h2>
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
-
-				<!-- Menu -->
-					<nav id="menu">
-						<div class="inner">
-							<h2>Menu</h2>
-							<ul class="links">
-								<li><a href="Index.html">Home</a></li>
-								<li><a href="GalleryOfArtworks.html">Gallery of Artworks</a></li>
-								<li><a href="GalleryOfPhotographs.html">Gallery of Photographs</a></li>
-								
-							</ul>
-							<a href="#" class="close">Close</a>
-						</div>
-					</nav>
-					<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
-							<h2 class="major">Gallery of Artworks</h2>
-						</div>
-					</section>
-
-				
-
-						<!-- Content -->
-							<div class="wrapper">
-								<div class="inner">
-									<h3 class="major">3D Artworks</h3>
-									
-								
-									<div class="container">
-										<div style="float: right;margin: right 0px;">
-											<figure>
-											<img src="images/D/Apath2.png" height="270" width="470">
-											<p></p>
-											</figure>
-										</div>
-										<figure>
-										<img class="middle-img" src="images/D/Kitchh.png" height="270" width="480">
-										<p></p>
-										</figure>
-									
-										<div style="float: right;margin: right 0px;">
-											<figure>
-											<img src="images/D/CanSmell.png" height="270" width="470">
-											<p></p>
-											</figure>
-										</div>
-											<figure>
-											<img class="middle-img" src="images/D/Bath.png" height="270" width="480">
-											<p></p>
-											</figure>
-											<div style="float: right;margin: right 0px;">
-												<figure>
-												<img src="images/D/Model2.png" height="270" width="470">
-												<p></p>
-												</figure>
-											</div>
-												<figure>
-												<img class="middle-img" src="images/D/TiitE.png" height="270" width="480">
-												<p></p>
-												</figure>
-									</div>
-											
-									<div class="wrapper">
-										<div class="inner">
-											
-											<h3 class="major">2D Artworks</h3>
-											<div style="float: right;margin: right 0px;">
-												<figure>
-												<img src="images/D/SamuTest.png" height="270" width="470">
-												<p></p>
-												</figure>
-											</div>
-												<figure>
-												<img class="middle-img" src="images/D/UBs.png" height="270" width="480">
-												<p></p>
-												</figure>
-											<div style="float: right;margin: right 0px;">
-												<figure>
-												<img src="images/D/DedH.png" height="270" width="470">
-												<p></p>
-												</figure>
-											</div>
-												<figure>
-												<img class="middle-img" src="images/D/High Form no Comp.png" height="270" width="480">
-												<p></p>
-												</figure>
-											<div style="float: right;margin: right 0px;">
-												
-												<figure>
-													<img src="images/D/Sha.png" height="600" width="350">
-													<p></p>
-												</figure>
-												</div>
-													<figure>
-														<img class="middle-img" src="images/D/Treezy.png" height="600" width="400">
-														<p></p>
-													</figure>
-												<div style="float: right;margin: right 0px;">	
-											</div>			
-										</div>	
-									</div>			
-								</div>
-							</div>
-							<h4 class="major"></h4>
-					</section>
-
-				<!-- Footer -->
-					<section id="footer">
-						<div class="inner">
-							<ul class="contact">
-								<li class="icon solid fa-map-pin">
-								Pretoria, South Africa<br />
-								
-								
-							</li>
-						<p></p>
-							<h2 class="major">Contact Me</h2>
-							
-							
-							
-								
-								<li class="icon solid fa-envelope">mmogomotsi14@gmail.com</a></li>
-					
-								<li class="icon brands fa-instagram"><a href="https://www.instagram.com/istomogom/" target="_blank">Mogomotsi²</a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; 2023 Mogomotsi Mogomotsi</li><li>
-							</ul>
-						</div>
-					</section>
-
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="Index.html">Home</a></li>
+					<li><a href="GalleryOfArtworks.html">Gallery of Artworks</a></li>
+					<li><a href="GalleryOfPhotographs.html">Gallery of Photographs</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
 			</div>
+		</nav>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<section id="banner">
+			<div class="inner">
+				<h2 class="major">Gallery of Artworks</h2>
+			</div>
+		</section>
 
-	</body>
+		<div class="wrapper">
+			<div class="inner">
+				<h3 class="major">3D Artworks</h3>
+				<div class="artwork-grid">
+					<figure onclick="openLightbox(this)">
+						<img src="images/D/Apartment Bedroom.png" alt="Apartment Bedroom.png" />
+						<figcaption>Apartment Bedroom</figcaption>
+					</figure>
+					<figure onclick="openLightbox(this)">
+						<img src="images/D/Kitchh.png" alt="Kitchen" />
+						<figcaption>Kitchen</figcaption>
+					</figure>
+					<figure onclick="openLightbox(this)">
+						<img src="images/D/Scented Candles.png" alt="Scented Candles" />
+						<figcaption>Scented Candles</figcaption>
+					</figure>
+					<figure onclick="openLightbox(this)">
+						<img src="images/D/Bathbombs.png" alt="Bathbombs.png" />
+						<figcaption>Bathbombs</figcaption>
+					</figure>
+					<figure onclick="openLightbox(this)">
+						<img src="images/D/Model2.png" alt="Model 2" />
+						<figcaption>Pink Man</figcaption>
+					</figure>
+					<figure onclick="openLightbox(this)">
+						<img src="images/D/TiitE.png" alt="TiitE" />
+						<figcaption>Podcast Setting</figcaption>
+					</figure>
+				</div>
+
+				<h3 class="major" style="margin-top: 3rem;">2D Artworks</h3>
+				<div class="artwork-grid">
+					<figure onclick="openLightbox(this)">
+						<img src="images/D/SamuTest.png" alt="Samu Test" />
+						<figcaption>Samurai</figcaption>
+					</figure>
+					<figure onclick="openLightbox(this)">
+						<img src="images/D/UBs.png" alt="UBs" />
+						<figcaption>Union Buildings</figcaption>
+					</figure>
+					<figure onclick="openLightbox(this)">
+						<img src="images/D/DedH.png" alt="DedH" />
+						<figcaption>Raged Zuu</figcaption>
+					</figure>
+					<figure onclick="openLightbox(this)">
+						<img src="images/D/High Form no Comp.png" alt="High Form" />
+						<figcaption>Ascended Gomu</figcaption>
+					</figure>
+					<figure onclick="openLightbox(this)">
+						<img src="images/D/Sha.png" alt="Sha" />
+						<figcaption>Bored</figcaption>
+					</figure>
+					<figure onclick="openLightbox(this)">
+						<img src="images/D/Treezy.png" alt="Treezy" />
+						<figcaption>Treezy Stillwavey</figcaption>
+					</figure>
+				</div>
+			</div>
+		</div>
+
+		<section id="footer">
+			<div class="inner">
+				<h2 class="major">Contact Me</h2>
+				<ul class="contact">
+					<li class="icon solid fa-map-pin">Pretoria, South Africa</li>
+					<li class="icon solid fa-envelope">mmogomotsi14@gmail.com</li>
+					<li class="icon brands fa-instagram"><a href="https://www.instagram.com/istomogom/" target="_blank">Mogomotsi²</a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; 2025 Mogomotsi Mogomotsi</li>
+				</ul>
+			</div>
+		</section>
+	</div>
+
+	<!-- Lightbox Modal -->
+	<div id="lightbox" onclick="closeLightbox()">
+		<span>&times;</span>
+		<img id="lightbox-img" src="" alt="Preview" />
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+	<script>
+		function openLightbox(figure) {
+			const img = figure.querySelector('img');
+			const lightbox = document.getElementById('lightbox');
+			const lightboxImg = document.getElementById('lightbox-img');
+			lightboxImg.src = img.src;
+			lightbox.style.display = 'flex';
+		}
+		function closeLightbox() {
+			document.getElementById('lightbox').style.display = 'none';
+		}
+	</script>
+</body>
 </html>
